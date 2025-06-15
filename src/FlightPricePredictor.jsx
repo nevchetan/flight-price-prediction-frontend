@@ -73,7 +73,7 @@ const FlightPricePredictor = () => {
       const { flightDate, deptTime, arrivalTime } = formData;
 
       const res = await axios.post(
-        "https://flight-price-prediction-backend-35s3.onrender.com",
+        "https://flight-price-prediction-backend-35s3.onrender.com/predict",
         {
           Airline: Number(formData.Airline),
           Source: Number(formData.Source),
