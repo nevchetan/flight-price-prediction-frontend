@@ -73,5 +73,6 @@ Live Application: https://your-vercel-url.vercel.app
 
 Developed by [Chetan Nevrekar]
 Email: chetannevrekar6@gmail.com
+
 Linkedn:https://www.linkedin.com/in/chetan-nevrekar
 
