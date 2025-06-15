@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+Flight Ticket Price Predictor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack machine learning web application designed to predict flight ticket prices based on various travel parameters including airline, source, destination, stops, and timing.
 
-## Available Scripts
+Model Accuracy: Achieved 87% R² score using a Random Forest Regressor trained on a real-world airline dataset.
 
-In the project directory, you can run:
+-------
 
-### `npm start`
+Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Real-time flight price prediction
+- Machine learning model built using scikit-learn
+- Backend powered by FastAPI
+- Frontend built with React.js
+- Deployed on Render (API) and Vercel (Frontend)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---------
 
-### `npm test`
+Dataset Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The model was trained on a publicly available dataset containing flight booking details. Below are the key features used:
 
-### `npm run build`
+| Feature           | Description                            |
+|------------------|----------------------------------------|
+| Airline           | Name of the airline                   |
+| Source            | Departure city                        |
+| Destination       | Arrival city                          |
+| Date_of_Journey   | Date of travel                        |
+| Departure Time    | Time of departure                     |
+| Arrival Time      | Time of arrival                       |
+| Total_Stops       | Number of stops or layovers           |
+| Additional_Info   | Special flight information            |
+| Duration          | Total travel time                     |
+| Price             | Target variable to predict            |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---------
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Model Training and Evaluation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The model was built using the following pipeline:
 
-### `npm run eject`
+- Preprocessed datetime features
+- Encoded categorical variables like Airlines, Source,Destination etc.
+- Removed null values and outliers
+- Used a RandomForestRegressor from scikit-learn
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The model achieved 87% R² score on the test data.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+----------------
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Backend (FastAPI):
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-Developed using FastAPI to serve a prediction API
+-Accepts POST requests with structured flight data
+-Returns predicted flight prices
 
-## Learn More
+Deployed on Render:
+POST https://flight-price-prediction-backend-35s3.onrender.com/predict
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-----------------
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Frontend (React):
 
-### Code Splitting
+-Form interface for users to input travel details
+-Makes API calls to backend for prediction
+-Displays the predicted ticket price
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Deployed using Vercel:
+Live Application: https://your-vercel-url.vercel.app
 
-### Analyzing the Bundle Size
+---------------------------------------------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Developed by [Chetan Nevrekar]
+Email: chetannevrekar6@gmail.com
+Linkedn:https://www.linkedin.com/in/chetan-nevrekar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
